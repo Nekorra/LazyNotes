@@ -1,0 +1,31 @@
+ion-content {
+
+    position: relative;
+    padding-bottom: 0 !important;
+    --background: url("../../assets/img/bg-3.jpg") no-repeat fixed center / cover;
+     // Workaround for issue related to css varialbes
+    // being recalculated with DOM changes
+    // https://github.com/ionic-team/ionic-framework/issues/17494
+    // https://github.com/ionic-team/ionic-framework/issues/16678
+    &::part(background) {
+      background: url("../../assets/img/bg-3.jpg") no-repeat fixed center / cover;
+    }
+    background-size: cover;
+    background-size: cover;
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: linear-gradient(to bottom right, #02362C, #003199);
+        opacity: .3
+    }
+
+    .note-date {
+        font-size: 0.8em;
+        color: #888;
+        margin-bottom: 12px;
+    }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "theia",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

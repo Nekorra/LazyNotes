@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>LazyNotes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+  
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="getImage(1)" color="success">
+      <ion-icon name="camera"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+    <ion-fab-button (click)="getImage(0)" color="primary">
+      <ion-icon name="cloud-upload"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <div *ngIf="srcImage" class="image-wrapper">
+    <img id="image" [src]="srcImage" />
+    <ion-button  (click)="recognizeImage()" expand="block">
+      <ion-icon name="search"></ion-icon>
+      Summarize
+    </ion-button>
+  </div>
+
+  <ion-card *ngIf="!finished && workerReady && captureProgress > 0">
+    <ion-card-header>
+      <ion-card-title>
+        Analyzing: {{ captureProgress }}%
+        <ion-progress-bar value={{showProgress}}></ion-progress-bar>
+      </ion-card-title>
+    </ion-card-header>
+  </ion-card>
+  <ion-card *ngIf="finished">
+    <ion-card-context>
+      {{ ocrResult }}
+    </ion-card-context>
+  </ion-card>
+
+</ion-content>
+
+

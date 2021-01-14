@@ -1,0 +1,15 @@
+{
+  "appId": "io.ionic.starter",
+  "appName": "theia",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchAutoHide": false,
+      "splashFullScreen": false,
+      "splashImmersive": false
+    }
+  },
+  "cordova": {}
+}

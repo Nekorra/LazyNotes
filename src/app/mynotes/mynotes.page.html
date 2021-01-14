@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>My Notes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+  <ion-list>
+    <ion-item *ngFor="let note of notes | async" (click)="getNote(note.createDate)">
+      <ion-label>
+        <span class="date">{{ note.date | date: 'dd/M/yy hh:mm a' }}</span>
+        {{ note.title }}
+        
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-button (click)="addNote()" expand="block" color="success">Add Note</ion-button>
+</ion-content>
